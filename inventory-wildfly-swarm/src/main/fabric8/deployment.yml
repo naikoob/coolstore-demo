@@ -1,0 +1,20 @@
+spec:
+  replicas: 1
+  template:
+    spec:
+      volumes:
+        - name: config
+          configMap:
+            name: app-config
+      containers:
+        - volumeMounts:
+            - name: config
+              mountPath: /app/config
+          env:
+            - name: JAVA_ARGS
+              value: '-s /app/config/project.yml'
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace

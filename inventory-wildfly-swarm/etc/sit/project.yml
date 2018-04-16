@@ -8,6 +8,6 @@ swarm:
     data-sources:
       InventoryDS:
         driver-name: org.postgresql
-        connection-url: jdbc:postgresql://localhost:5432/coolstore-uat
-        user-name: coolstore-uat
-        password: P@ssw0rdUAT
+        connection-url: jdbc:postgresql://172.28.129.1:5432/coolstore-sit
+        user-name: coolstore-sit
+        password: P@ssw0rdSIT
